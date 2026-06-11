@@ -196,24 +196,116 @@ export default store
 
 ---
 
-## 🌍 Task 6: Global Provider
+# Task 6: Global Store Setup & Deployment
 
-import { Provider } from 'react-redux'
-import store from './store.js'
+## Redux Global Store Setup (main.jsx)
 
-<Provider store={store}> <App /> </Provider>
+To enable Redux across the entire application, the Redux store must be provided globally using the `Provider` component from `react-redux`.
+
+### Steps:
+
+1. Import `Provider` from `react-redux`:
+
+"js
+import { Provider } from 'react-redux';
+"
 
 ---
 
-## 🚀 Deployment
+2. Import the Redux store:
 
+"js
+import store from './store.js';
+"
+
+---
+
+3. Wrap the application with `Provider` and pass the store:
+
+"js
+<Provider store={store}>
+  <App />
+</Provider>
+"
+
+This ensures all components can access and interact with the Redux global state.
+
+---
+
+# GitHub Pages Deployment (Vite + React)
+
+## 1. Install gh-pages
+
+"bash
 npm install gh-pages --save-dev
+"
 
-"predeploy": "npm run build", "deploy": "gh-pages -d dist"
+---
 
-base: "/YOUR_REPOSITORY_NAME"
+## 2. Update `package.json`
 
+Add the following scripts:
+
+"js
+"predeploy": "npm run build",
+"deploy": "gh-pages -d dist"
+"
+
+---
+
+## 3. Update `vite.config.js`
+
+Add the `base` property (replace with your repository name):
+
+"js
+base: "/YOUR_REPOSITORY_NAME",
+"
+
+Example:
+
+"js
+base: "/learning_react",
+"
+
+---
+
+## 4. Deploy Application
+
+"bash
 npm run deploy
+"
+
+This command builds the project and deploys it to GitHub Pages.
+
+---
+
+## 5. GitHub Pages Configuration
+
+After deployment:
+
+1. Go to your GitHub repository  
+2. Click **Settings**  
+3. Navigate to **Pages**  
+4. Under **Source**, select:
+   - Branch: `gh-pages`
+   - Folder: `/ (root)`
+5. Click **Save**
+
+---
+
+## 6. Access Live Site
+
+After a short wait, your live link will appear in the Pages section.
+
+If it does not appear immediately, wait 1–2 minutes and refresh.
+
+---
+
+# Important Notes
+
+- Always run `git add`, `git commit`, and `git push` after changes
+- Deployment may take a few minutes to reflect updates
+- Images and assets may take time to load after first deployment
 
 ---
 
