@@ -1,6 +1,4 @@
-# coding-project-template
-
-# coding-project-template
+# Project Repository: e-plantShopping
 
 # 🌿 Final Project: Paradise Nursery Shopping Application  
 IBM Full-Stack JavaScript Certificate – Course 5: Developing Front-End Apps with React (Module 4)
